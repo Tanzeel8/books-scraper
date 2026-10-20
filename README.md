@@ -29,7 +29,8 @@ A short sample is included in [`sample_output.csv`](sample_output.csv).
 
 | title | price_text | price | rating | url |
 |-------|-----------|-------|--------|-----|
-| (book title) | £51.77 | 51.77 | 3 | (book link) |
+| A Light in the Attic | £51.77 | 51.77 | 3 | https://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html |
+| Tipping the Velvet | £53.74 | 53.74 | 1 | https://books.toscrape.com/catalogue/tipping-the-velvet_999/index.html |
 
 ## License
 MIT
