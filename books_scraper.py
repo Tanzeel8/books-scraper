@@ -21,7 +21,7 @@ def scrape_books(max_pages=None, delay=0.5):
     while True:
         r = requests.get(url, headers=HEADERS, timeout=20)
         r.raise_for_status()
-        soup = BeautifulSoup(r.text, "lxml")
+        soup = BeautifulSoup(r.content, "lxml")
 
         for card in soup.select("article.product_pod"):
             title = card.h3.a["title"].strip()
@@ -55,7 +55,7 @@ if __name__ == "__main__":
     # basic cleaning examples
     df = df.drop_duplicates(subset=["url"]).reset_index(drop=True)
     # save
-    df.to_csv("output/books.csv", index=False, encoding="utf-8")
+    df.to_csv("output/books.csv", index=False, encoding="utf-8-sig")
     df.to_excel("output/books.xlsx", index=False)
     
     print(f"✅ Saved {len(df)} rows -> output/books.csv & output/books.xlsx")
